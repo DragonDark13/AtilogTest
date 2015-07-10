@@ -1,0 +1,1198 @@
+
+/*Миксины ЛЕСС и стили очистки*/
+article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary{display:block;}
+/* ______________Шаблоны__________________________________________________________________________ */
+.transition(@time){
+-ms-transition:  all @time ease-in-out 0s;
+-webkit-transition:  all @time ease-in-out 0s;
+-moz-transition:  all @time ease-in-out 0s;
+ transition:  all @time ease-in-out 0s;
+}
+.my_trasform(@transform){
+-o-transform: @transform;
+-ms-transform:@transform;
+ -moz-transform: @transform; 
+-webkit-transform: @transform ;
+ transform: @transform ;  
+}
+
+.box-sizing{ 
+-o-box-sizing:border-box;
+-moz-box-sizing:border-box;
+-webkit-box-sizing:border-box;
+box-sizing:border-box;   }	
+
+ .word-wrap {
+ -webkit-word-wrap:  break-word;
+ -ms-word-wrap:  break-word;
+            word-wrap: break-word;}
+			
+ .my_opacity(@opacity)
+ { 
+-ms-opacity:@opacity;
+-moz-opacity:@opacity;
+-webkit-opacity:@opacity;
+ opacity:@opacity;}		
+ 
+ .clearfix {
+	&:before ,&:after{
+    content: "";
+    display: table;
+    clear: both;}
+}
+ .my_font-size(@this_font-size, @parent_font-size){
+  font-size: (@this_font-size / @parent_font-size) * 100% ;
+}
+.my_width(@this_width, @parent_width){
+  width: (@this_width / @parent_width) * 100% ;
+}
+ .ponter{cursor: pointer;}	
+
+/*Шрифт "MyriadPro"-------------------------------------------------------------------------------------*/
+
+/* font-family: "MyriadProRegular"; -------------------------------------------------------------------*/
+@font-face {
+    font-family: "MyriadProRegular";
+    src: url("../fonts/MyriadProRegular/MyriadProRegular.eot");
+    src: url("../fonts/MyriadProRegular/MyriadProRegular.eot?#iefix")format("embedded-opentype"),
+    url("../fonts/MyriadProRegular/MyriadProRegular.woff") format("woff"),
+    url("../fonts/MyriadProRegular/MyriadProRegular.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+/* font-family: "MyriadProSemiBold"; */
+@font-face {
+    font-family: "MyriadProSemiBold";
+    src: url("../fonts/MyriadProSemiBold/MyriadProSemiBold.eot");
+    src: url("../fonts/MyriadProSemiBold/MyriadProSemiBold.eot?#iefix")format("embedded-opentype"),
+    url("../fonts/MyriadProSemiBold/MyriadProSemiBold.woff") format("woff"),
+    url("../fonts/MyriadProSemiBold/MyriadProSemiBold.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+
+/* ---------------------------------------------------------------------------------------------- */
+
+@Base-color2: #000;
+@text-color: #fff;
+@left-nav_button-bg-color :#F7671D;
+	
+	*{
+ /* Что бы не было полей и отступов по умлчанию*/				
+margin:0  ;
+padding:  0 ;
+.transition(0.3s);
+.box-sizing;
+}  
+
+ul{list-style:none;}  
+ * a{text-decoration:none;  color: @text-color;} 
+ * a:focus{border:none;  outline: none;} 
+ 
+input,
+button,
+input,
+select,
+textarea
+{ 
+outline: none;
+border: 0px;
+
+	&:focus { 
+	outline: none;
+	}
+
+	}
+
+input,
+textarea{
+
+	&[placeholder]{color:lighten(@Base-color2,  20%);}
+	&::-webkit-input-placeholder {color:lighten(@Base-color2,  20%);}
+	&::-moz-placeholder       {color:lighten(@Base-color2,  20%);}
+	&:-moz-placeholder       {color:lighten(@Base-color2,  20%);}
+	&:-ms-input-placeholder  {color:lighten(@Base-color2,  20%);}  
+	
+	&:focus::-webkit-input-placeholder {.my_opacity(0);
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(opacity=0)"; }
+	&:focus::-moz-placeholder          {.my_opacity(0);
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(opacity=0)";
+	}
+	&:focus:-moz-placeholder           {.my_opacity(0);
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(opacity=0)";
+	}
+	&:focus:-ms-input-placeholder      {.my_opacity(0);
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(opacity=0)";
+	}
+	
+}	
+
+
+/*Переменна укказывающая на ширину основного блок*/
+@display_width: 1024px;
+	
+body {
+    width: 100%;
+	 color:@text-color;
+font:14px /1.7em  Arial , sans-serif; 
+}
+
+/*------------------------------------------------------------------------------------------*/
+     #all{ 
+margin: 0 auto;
+margin-top: 66px;
+height: auto;
+width: @display_width;       
+text-align:center;
+background-color: @text-color;}
+ 
+
+ /*
+ * Верхнее меню
+ *
+ */
+ 
+.top{
+top: 0px;
+position: fixed;
+right: 0px;
+left: 0px;
+background-color: #2C2C2C;
+z-index: 200;
+	
+/*Контейнер для меню-----------------------------------*/
+	div{ 
+	margin: 0px auto;
+	width:@display_width; 
+	height: 66px;
+	background-color: #2C2C2C;
+	}
+	
+	
+	/*Кнопка "гамбургер"------------------------------*/
+	.top_switch-meni{
+	position: relative;
+	display: none;
+	width:  13%;
+	height: 30px;
+	cursor: pointer;
+	border-bottom: 3px solid @text-color;
+	border-top: 3px solid @text-color;
+	
+		&:after{
+		position:absolute;
+		left: 0%;
+		top: 50%;
+		margin-top: -1.5px;
+		width: 100%;
+		height: 3px;
+		background: @text-color;
+		content: "";}
+	}
+	
+	
+	ul{ 
+	height: 100%;
+	.clearfix;
+	padding-top: 30px;
+	margin-left: 108px;}
+	
+		li{	
+		display:block;
+		float:left;	
+		height: 100%;
+		
+		}
+		
+		li:hover{	
+		background-color: lighten(@Base-color2,  90%);
+		
+			a{color: @Base-color2;}
+		}
+		
+			a{ 
+			display:block; 
+			padding-left: 17px;
+			padding-right: 17px; }
+			
+			
+/*	Класс для переключения меню из невидимого состояния в видимое
+(Ширина экрана 320)*/
+	.top_show-meni{
+	display:block !important;
+	}
+
+}
+
+/*	Класс делающий меню полупрозрачным при прокрутке*/
+.top--transparent{ 
+.my_opacity(0.4);
+-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(opacity=40)";}
+
+.top--transparent:hover{ 
+.my_opacity(1);
+-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(opacity=100)";}
+/*------------------------------------------------------------------------------------------*/
+ 
+ 
+   /*
+ * Боковое меню
+ *
+ */
+.left{ 
+position: fixed;
+z-index: 99;
+top: 0px;
+bottom: 0px;
+left: 50%;
+margin-left: (-@display_width - ( -14px)) / 2 ;
+width: 30px;
+height: 100%;
+
+	
+	ul{
+	position:absolute;
+	left: 0%;
+	top: 20%;
+	
+	display:block;	
+	width: 	40px;
+	}
+	
+		li{
+		display:block;
+		width: 	100%;
+		height: 40px;
+		margin-bottom: 30px;
+		border-radius: 50%;
+		background-image: url(../images/arrowhead_up_40.png);
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: 25px;
+		
+		background-color: @left-nav_button-bg-color;
+		box-shadow: darken(@left-nav_button-bg-color, 30%) 0px 0px 0px 3px  inset,
+		darken(@left-nav_button-bg-color, 10%) 0px 0px 0px 6px  inset;
+		.my_opacity(0.6);
+		-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(opacity=80)";
+		}
+		
+		a:last-child li{ background-image: url(../images/arrowhead_down_40.png);}
+			 
+		li:hover{
+		.my_opacity(1);
+		background-color: lighten(@left-nav_button-bg-color, 15%);
+		box-shadow:
+		 darken(@left-nav_button-bg-color, 30%) 0px 0px 0px 3px  inset,
+		lighten(@left-nav_button-bg-color, 15%) 0px 0px 0px 6px  inset;
+		.my_opacity(1);
+		-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(opacity=1)";	
+
+		/*box-shadow: darken(@left-nav_button-bg-color, 30%) 1px 1px 1px 0px  inset, darken(@left-nav_button-bg-color, 30%) 1px 1px 1px 0px  ;*/
+		}	
+		
+		li:active{
+		background-color: darken(@left-nav_button-bg-color, 30%);
+		box-shadow:
+		 darken(@left-nav_button-bg-color, 30%) 0px 0px 0px 3px  inset,
+		darken(@left-nav_button-bg-color, 30%) 0px 0px 0px 6px  inset;
+		}	
+}
+ /*------------------------------------------------------------------------------------------*/
+ 
+ 
+ /*
+ * Хедер
+ *
+ */
+ header{	 
+clear:both;
+
+
+img{
+	display:block;
+	margin: 0 auto;
+	max-width: 100%;
+	}
+}
+ 
+ 
+ /*------------------------------------------------------------------------------------------*/
+    /*
+ * Заголовки
+ *
+ */
+ h4{
+	font-family: MyriadProSemiBold;
+	.my_font-size(30, 14); 
+	line-height: 1.4em;
+	text-align: left;
+	margin-bottom: 64px - 10px;
+	padding-top:54px; 
+	padding-right: @portfolio_width - 204px; 
+	position:relative;
+	.word-wrap;
+	
+	  &:after{		
+	  position:absolute;
+	  content: "";	
+	  width:  @portfolio_width - 204px;
+	  height: 3px;
+	  background:@text-color;
+	  top:76px;
+	  left: 204px;
+	  }
+  }
+
+/*------------------------------------------------------------------------------------------*/
+
+   /*
+ * Блок портфолио
+ *
+ */
+ 
+/* переменгная куда заносим ширину контейнера для блоков портфолио---------------------*/
+ @portfolio_width: 775px; 
+ 
+/* Стили для контейнера с блоками портфолио----------------------------------------------------------*/
+.portfolio{
+padding-left: 128px - 4.5px;
+padding-right: 130px - 4.5px;
+padding-bottom:75px - 10px;
+background-color: #63baa9;
+position:relative;
+
+/*Блоки портфолио*/
+	.conteiner-text-block  {.clearfix;}  
+	
+/*Текстовые элементы блоков портфолио */	
+		h3 {font-weight:normal;}
+		
+		p {.my_font-size(12, 14);}
+
+
+ /*
+ * Контейнер с картинками ---------------------------------------------------------------------------
+ *
+ */
+
+/*  Блок с картинками------------*/
+.conteiner-img{
+overflow: hidden;
+position:relative;
+margin: 0px auto;
+margin-bottom: 10px;
+width: 70%;
+}
+
+/*Картинки---------------------*/
+		img{ 
+	position:absolute;
+	top: 0%;
+	left: -9999px;
+	width: 100%;
+	max-width: 100%;
+	.my_trasform(scale(1)  translateY(0%));
+	.my_opacity(1);
+	.transition(0.3s)
+	}
+
+/*Переводит блок с картинкой в видимое состояние*/
+.active{ 
+left: 0%; 
+position:static; 
+display: block;}
+
+
+/*
+ * Контейнер с блоками -------------------------------------------------------------------- 
+ *
+ */
+ 
+ 
+/* Стили для блоков внутри контейнера------------------------------------------------------*/
+	.conteiner-text-block>*{
+	margin: 0px  4.5px;
+	margin-bottom: 10px;
+	
+	padding-left: 17px;
+	padding-right: 17px;
+	padding-bottom: 24px;
+	padding-top: 33px;
+	float:left;	
+	}
+	
+/*	Выравнивает высоту первых 2 контейнеров-------------------------------------------*/
+	.conteiner-text-block>*:nth-child(1),
+	.conteiner-text-block>*:nth-child(2){
+	height: 246px;	
+	}
+	
+/*	Контейнер с текстом-------------------------------------------*/	
+	.conteiner-text-block>*:nth-child(1){
+	.my_width(507,  @portfolio_width);
+	background-color: @left-nav_button-bg-color;
+	font-family: "Arial Narrow";
+	
+		h3{
+		text-transform:uppercase;
+		.my_font-size(18, 14);
+		padding-bottom: 20px;
+		text-align:left;
+		}
+		
+		p {
+		text-align:left; 
+		line-height: 1.5;
+		.my_font-size(12, 12);
+		}
+	
+	}
+		.conteiner-text-block>*:nth-child(2) h3 {
+		padding-top: (150 /( 246 - 33 )) * 100%;}
+	
+/*	Переменные определяющие ширину блоков с портфолио и цвет тени*/
+	@portfolio-block--width: 249px;	
+	@portfolio-block--box-shadow: rgba(0,0,0,0.2);
+	
+	.portfolio-block{
+	color:@Base-color2;
+	.my_width(@portfolio-block--width,  @portfolio_width);
+	height: 122px;
+	background-color: @text-color;
+	position: relative;
+	z-index: 3;
+	text-align:left;
+	.ponter; 
+	
+		&:hover{
+		box-shadow:  
+		inset	darken(@text-color,  10%) 10px 0px 0px 0px, 
+		inset darken(@text-color,  10%) -10px 0px 0px 0px;
+		
+		box-shadow: 
+		inset @portfolio-block--box-shadow 15px  0px 0px 0px, 
+		inset @portfolio-block--box-shadow -15px  0px 0px 0px;
+		}
+		
+		h3 {
+		padding-top: 26px;
+		.my_font-size(24, 14);
+		color: #cc6633;
+		}
+	
+	}
+	
+     /*
+ * Стили для выбраного блока -------------------------------------------------
+ *
+ */
+
+	.portfolio-block--click,  .portfolio-block--click:hover{
+		box-shadow:  
+		inset darken(@text-color,  10%) @portfolio-block--width / 2 0px 0px 0px, 
+		inset darken(@text-color,  10%) -@portfolio-block--width / 2 0px 0px 0px;
+		
+		box-shadow:  inset @portfolio-block--box-shadow @portfolio-block--width / 2 0px 0px 0px, 
+		inset @portfolio-block--box-shadow -@portfolio-block--width / 2 0px 0px 0px;}
+
+}
+/*------------------------------------------------------------------------------------------*/
+
+
+
+ 
+    /*
+ * Контакты
+  *
+ */
+ .Contacs{
+ background: url(../images/Nout.png) no-repeat right top #303646;
+padding:  60px 100px 10px 124px;
+font-family: MyriadProRegular;
+ .clearfix ;  
+
+	h4{
+	padding-top: 0;	
+	margin-bottom: 45px;
+	padding-right: 800px - 181px;
+	 
+	
+	&:after{
+	left: 181px;
+	top: 22px;	
+	width: 475px;
+
+				   }
+	}
+	
+	     /*
+ * Форма для комментариев -------------------------------------------------------------
+ *
+ */
+
+	form{
+	float:left;
+	.my_width(489, 800);
+	text-align:left;
+	padding-left:5px;
+	padding-right:21px;
+	
+		*{ display:block;}
+	
+	}
+		legend{
+		position:relative;	
+		margin-bottom: 20px;	
+		color: #cc6633;	
+		padding-right: 463px - 122px;
+		
+			&:after{
+			position:absolute;
+			content: "";	
+			width: 463px - 122px;
+			height: 1px;
+			background:#4e4d4d;
+			top:0.9em;
+			left: 122px;
+			}
+		}
+		label{
+		padding-bottom: 1px;
+		.my_font-size(12, 14);
+		color: #868686;
+		
+			&:hover{
+			color: @text-color;}
+		
+		}
+	
+	     /*
+ * Выпадающий текст
+ *
+ */
+		  .form_hint{
+		  display:none;
+	}
+	
+	
+	input[type="email"],
+	input[type="text"],
+	textarea{
+	padding: 1px;
+	border: solid 1px #4C4C4C;
+	font-family: MyriadProRegular;
+	.my_font-size(14, 12);
+	position:relative;
+	
+		&:before{
+		position:absolute;
+		top: 0px;
+		left: -20px;
+		content:"";
+		height: 100%;
+		width: 2px;
+		background: @text-color	;
+		-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(opacity=0)";
+		.my_opacity(0);
+		}
+		&:focus:before {
+		-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(opacity=100)";
+		.my_opacity(1);	
+		left: -5px;
+		}
+		
+	     /*
+ * Стили для выпадающего текста
+ *
+ */		
+		&:focus + .form_hint{ display:block; }
+		&:focus:invalid + .form_hint{color: #F03438; }
+		&:focus:valid + .form_hint{ color: #6BA61E; }
+		
+		}
+	
+	input[type="email"],
+	input[type="text"]{
+	width: 227px;
+	height:24px;
+	resize:none;
+	}
+	
+	textarea{ 
+	width: 100%;
+	height: 72px;
+	resize:none;}
+	
+	input[type="submit"]{
+	position:relative;	
+	float:right;
+	margin-top: 5px;	
+	.my_font-size(12, 14);
+	border: 1px solid #CE6F11;
+	border-radius: 3px;
+	background-color: @left-nav_button-bg-color;
+	padding: 0px 6px;
+	 .ponter;
+	 
+		&:hover{
+		box-shadow: darken(@left-nav_button-bg-color , 20%) -2px -2px 6px 1px inset, 
+		lighten(@left-nav_button-bg-color , 20%) 2px 2px 6px 1px inset;
+		color:@text-color;
+		.transition(0.1s);
+		}
+		
+		&:active{
+		top: 1px;
+		box-shadow: darken(@left-nav_button-bg-color , 20%) -10px -10px 10px 1px inset ;
+			} 
+	}
+ 
+ 
+	.Contacs_social-net,
+	.Contacs_cont-inf{
+	.my_width(311, 800);	
+	margin-left: 61.125%;
+	padding-left: 29px;	
+	text-align:left;
+	
+		legend{	
+		color: @Base-color2;
+		margin-bottom: 12px;
+		}	
+	}
+	     /*
+ * Блок соц сетей ---------------------------------------------------------------------------
+ *
+ */
+
+	.Contacs_social-net{
+	padding-bottom: 26px;
+	
+		legend{	
+		padding-right: 282px - 118px;
+		
+			&:after{
+			width: 282px - 118px - 24px;
+			left: 118px;
+			}
+		
+		}	
+	}
+
+	     /*
+ * Стили для кружков
+ *
+ */
+		  .Contacs_social-net div,
+		  .Contacs_cont-inf span{
+		  width: 28px;
+		  height: 28px;
+		  border-radius: 50%;	}
+		  
+		  .Contacs_social-net a:hover ,
+		  .Contacs_cont-inf li:hover span ,
+		  .Contacs_social-net a:active ,
+		  .Contacs_cont-inf li:active span 
+		  {box-shadow: @text-color  0px 0px 1px 2px ; }
+		  
+		  .Contacs_social-net a{
+		  border-radius: 50%;
+		  margin-right: 10px;
+		  display:inline-block;
+		  }
+		  
+		  .Contacs_social-net div{
+		  background:url(../images/social1.png) no-repeat center;
+		  .transition(0.1s);
+		  
+		  &:active{box-shadow: darken(@text-color, 90%) 1px 1px 1px 0px ; }
+		  }
+		  a:nth-child(2) div{background: url(../images/social2.png) no-repeat center;	}
+		  a:nth-child(3) div{background: url(../images/social3.png) no-repeat center;	}	
+		  
+	
+		     /*
+ * Блок контактов ------------------------------------------------------------
+ *
+ */
+	
+	.Contacs_cont-inf  legend{	
+	  padding-right: 282px - 174px;
+		  
+		  &:after{
+		   width: 282px - 174px;
+		   left: 174px;
+			}
+	  
+	  }	
+	
+	.Contacs_cont-inf ul{	
+	color: lighten(@Base-color2,  40%);	
+	line-height: 1.3em;
+	
+	}
+		.Contacs_cont-inf li{
+		position:relative;
+		padding-left: 40px;
+		padding-top: 7px;
+		padding-bottom: 7px;
+		.ponter;
+		
+			&:hover{color: darken(@text-color, 30%) ; }
+		}
+		
+/*		блоки с круглыми картинками*/
+			.Contacs_cont-inf span{
+			position:absolute;	
+			left: 0%;
+			top: 50%;
+			margin-top: -14px;
+			background: url(../images/Cont_inf1.png) no-repeat center;
+			}
+			.Contacs_cont-inf li:nth-child(2) span{background: url(../images/Cont_inf2.png) no-repeat center;	}
+			.Contacs_cont-inf li:nth-child(3) span{background: url(../images/Cont_inf3.png) no-repeat center;	}
+			.Contacs_cont-inf li:nth-child(4) span{background: url(../images/Cont_inf4.png) no-repeat center;	}
+ }
+ /*------------------------------------------------------------------------------------------*/
+ 
+ 
+     /*
+ * Медиазапросы
+  *
+ */
+/* От больших разрешений к малым*/
+ 
+@media screen and (min-width: 1200px) {
+	@display_width: 90%; 
+	@portfolio_width: 90%; 	 
+	@portfolio-block--width: 215px;
+
+/*Верхнее меню	*/	
+	.top div {
+	font-size: 2em;
+	width: 90%;
+	max-width: 1500px;
+	height: auto;
+	min-height: 66px;
+	
+		a{ 
+		min-height: 66px;
+		padding-top: 10px;;
+		max-height: 100px;
+		}
+	}
+	
+/*	Левое меню*/
+	.left{ 
+	height: 100%;
+	width: 5%;
+	margin-left: (-@display_width - ( 0%)) / 2 ;}
+	
+		.left ul {
+		width: 70%;
+		height: 30%;
+		
+			li{
+			max-width: 80px;
+			max-height: 80px;
+			margin-bottom: 35%;
+			width: 40px;
+			
+			}
+		}
+	
+/*	Основной контейнер*/
+	#all{
+	width:@display_width;
+	}	  
+	
+		header img {
+		display: block;
+		margin: 0px auto;
+		width: 100%;}
+		
+		.Contacs h4,
+		h4{
+		padding-right: @portfolio_width - 10%; 
+		
+			&:after{		
+			width:  @portfolio_width - 0%;
+			}
+		}
+		
+		
+		.portfolio {
+		padding-left: 5%;
+		padding-right: 5%;
+		
+			.conteiner-img{
+			max-width: 1075px;
+			}
+			
+			.conteiner-text-block>*{
+			margin: 0px   0.2%;
+			margin-bottom: 10px;
+			}
+			
+			.conteiner-text-block > :nth-child(1),
+			.conteiner-text-block .portfolio-block{ 	
+			height:  18em;}	
+			
+			.conteiner-text-block > :nth-child(1){
+			max-width: 252px * 2 ;
+			
+			}
+			
+			.conteiner-text-block .portfolio-block{
+			max-width: 249px;
+			
+				h3 {padding-top: 5em;}
+			}
+			
+		}
+		
+		
+/*		Контакты-----------------------------------------*/	
+		
+		.Contacs{
+		padding:  60px 7% 10px 7%;
+		
+			h4:after{	width:  @portfolio_width / (@portfolio_width / 50% );}
+		
+		
+			form{
+			width: 100% / 2;	
+			max-width: 740px;
+			}
+			
+			.Contacs_social-net,
+			.Contacs_cont-inf{ 
+			float:left;
+			margin-left: 0px; 
+			width: (100% / 2)/ 2;
+			max-width: 370px;
+			}
+			
+			/* Стили для линий */
+			.Contacs_cont-inf ,
+			.Contacs_social-net{ 
+
+					legend{padding-right: 25%;}
+
+							legend:after{
+							width: 25%;
+							left: 75%;
+							}
+			}
+			
+			
+			/* Убирает  линию в блоке с ссылами на адреса и телефон фирмы */
+							.Contacs_cont-inf legend:after{width: 0%;}
+			
+				.Contacs_cont-inf li {
+				padding-top: 3%;
+				padding-bottom: 3%;
+				}
+		
+		}
+
+}
+
+ 
+@media screen and (max-width: 1000px) {
+	@display_width: 768px;
+	@portfolio-block--width: 215px;	
+	@portfolio-block--box-shadow: rgba(0,0,0,0.2);
+	 @portfolio_width: 697px; 	
+	
+	#all{width:@display_width;}	 
+	
+	/*
+	* Навигация
+	*
+	*/	 
+	.top div{
+	width:@display_width;
+	}
+	.left{ 
+	margin-left: (-@display_width - ( -14px)) / 2 ;
+	
+			li{height: 30px;
+			width: 30px;
+			.my_opacity(1);
+			-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(opacity=1)";
+			}
+	}
+	
+	.Contacs h4,
+	h4{
+	padding-right: @portfolio_width - 204px; 
+	
+	&:after{		
+	width:  @portfolio_width - 204px;
+	}
+	}
+	/*------------------------------------------------------------------------------------------*/
+	
+	/*
+	* Портфолио
+	*
+	*/	
+	
+	.portfolio,  .Contacs{
+	padding-left: 40px - 4.5px;
+	padding-right: 40px - 4.5px;
+	
+		.ActiveImgContainer{height: 315px;}
+		
+		.conteiner-text-block>*:nth-child(1), .conteiner-text-block>*:nth-child(2){
+		height: 286px;
+		}
+		.conteiner-text-block>*:nth-child(1){
+		.my_width((@portfolio-block--width * 2  + (4*2)), 697);/* Этот блок равен ширине 2 "обычных"*/
+		}
+			.conteiner-text-block>*:nth-child(2) h3 {
+			padding-top: (240 /( 286 - 33 )) * 100%;}
+		
+		.portfolio-block{
+		.my_width(@portfolio-block--width, @portfolio_width);
+		height: 122px;
+		
+			h3 {padding-top: 5px;}
+		}
+		
+		
+		.portfolio-block--click, .portfolio-block--click:hover{
+		box-shadow:  
+		inset @portfolio-block--box-shadow @portfolio-block--width / 2 0px 0px 0px, 
+		inset @portfolio-block--box-shadow  -@portfolio-block--width / 2 0px 0px 0px;}
+
+}
+/*------------------------------------------------------------------------------------------*/
+
+/*
+* Контакты
+*
+*/
+
+.Contacs{
+	
+	
+	h4:after{ width: 308px; }
+	
+	legend{
+	padding-right: 426px - 122px;
+	
+		&:after{width: 426px - 122px;  }
+	}
+	
+	textarea{ height:100px;}
+	
+	}
+	.Contacs .Contacs_social-net  legend:after{
+	width: 282px - 118px - 130px;
+	}
+	
+	.Contacs .Contacs_cont-inf  legend:after{
+	width: 271px - 174px;
+	}
+
+}
+ 
+
+ @media screen and (max-width: 768px) {
+	@display_width: 320px;
+	@portfolio-block--width: 251px;	
+	@portfolio-block--box-shadow: rgba(0,0,0,0.2);
+	@portfolio_width: 279px;
+	
+	
+	.top div ul li,
+	.portfolio .conteiner-text-block > *,
+	.Contacs form 
+	{ float:none;	}  
+	
+	/*
+	* Навигация
+	*
+	*/	 
+	
+	.top{
+	height: 36px;
+	
+		div{ 
+		margin: 0px auto;
+		width:@display_width; 
+		height: 66px;
+		height: auto;
+		}
+		
+			.top_switch-meni{
+			display:block;	
+			
+			}
+			
+			ul{ 
+			height: 100%;
+			padding-top: 5px;
+			margin-left: 0px;
+			display:none;
+			}
+			
+				li{	
+				box-shadow:   darken(@text-color,  30%)  0px 1px 1px 1px inset;
+				}
+				
+					a{
+					padding-bottom: 10px;
+					padding-top: 10px;}
+		
+	}
+	.top--transparent{ 
+	.my_opacity(1);
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(opacity=100)";}
+	
+	.left{ 
+	margin-left: (-@display_width - ( -10px)) / 2 ;}
+	
+	#all{
+	width:@display_width;
+	margin-top: 36px; 
+	}
+	/*------------------------------------------------------------------------------------------*/
+	/*
+	* Заголовки
+	*
+	*/
+	
+	
+	h4{
+	padding-right: @portfolio_width - 204px; 
+	padding-top: 54px - 20;
+	
+		&:after{
+		width:  @portfolio_width - 204px;
+		top:76px - 20;}
+		
+	}
+	/*------------------------------------------------------------------------------------------*/	
+	
+	
+	/*
+	* Портфолио
+	*
+	*/
+	.portfolio,  .Contacs{
+	padding-left: 40px - 4.5px;
+	padding-right: 10px - 4.5px;
+	
+	/*
+	* Стили для контейнера с картинками
+	*
+	*/   
+	
+			.conteiner-img{
+			width: 94%;
+			margin-left: 0px;
+			}
+			
+				img{ 
+				position:absolute;
+				top: 0%;
+				left: -9999px;
+				
+				.my_trasform(scale(1)  translateY(0%));
+				.my_opacity(1);
+				}
+			
+			.active{ left: 0%;}
+			
+			.ActiveImgContainer{height: 180px;}
+			
+			.conteiner-text-block{ 
+			overflow-y:scroll;
+			height: 450px;
+			}
+			
+			.conteiner-text-block>*:nth-child(1),
+			.portfolio-block{
+			.my_width(@portfolio-block--width, @portfolio_width);
+			}
+			
+			.conteiner-text-block>*:nth-child(1){
+			height: 286px;
+			height: auto;
+			}
+			
+			.conteiner-text-block>*:nth-child(2){
+			height: 90px;
+			padding-top: 15px;
+			padding-bottom: 5px; }
+			
+				.conteiner-text-block>*:nth-child(2) h3 {
+				padding-top: 5px;}
+			
+			.portfolio-block{
+			height: 90px;
+			padding-top: 15px;
+			padding-bottom: 5px;
+			}
+			
+			.portfolio-block--click,
+			.portfolio-block--click:hover{
+			box-shadow:  
+			inset @portfolio-block--box-shadow @portfolio-block--width / 2 0px 0px 0px, 
+			inset @portfolio-block--box-shadow  -@portfolio-block--width / 2 0px 0px 0px;}
+	
+	}
+	/*------------------------------------------------------------------------------------------*/
+	/*
+	* Контакты
+	*
+	*/	
+	.Contacs{
+	background-size: 50%;
+	
+		h4 {	padding-right: 280px - 181px;}
+		
+			h4:after{ width: 0px;}
+		
+		
+		form,
+		.Contacs_social-net,
+		.Contacs_cont-inf{
+		width: 100%;
+		padding-left: 0%;
+		padding-right: 0%;	
+		}
+		
+		form{
+		.clearfix ;}
+		
+			legend{
+			padding-right: 280px - 122px;
+			
+				&:after{width: 280px - 122px;  }
+			}
+		
+		input[type="submit"]{
+		padding-top: 6px;	
+		padding-bottom: 6px;	
+		
+		}	
+		
+		.Contacs_social-net,
+		.Contacs_cont-inf{	
+		margin-left: 0%;}
+		
+			.Contacs_social-net  legend:after{
+			width: 280px - 118px ;
+			}
+			
+			.Contacs_cont-inf  legend:after{
+			width: 280px - 174px;
+			}
+	}
+
+}
