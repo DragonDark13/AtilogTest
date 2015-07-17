@@ -127,6 +127,29 @@ textarea{
 	
 }	
 
+/*Спрайты*/
+
+/*Контактная информация*/
+.sprite-Cont_inf1 { background:url(../images/sprites.png) no-repeat -0px -0px; }
+.sprite-Cont_inf2 {  background:url(../images/sprites.png) no-repeat -0px -26px; }
+.sprite-Cont_inf3  { background:url(../images/sprites.png) no-repeat -0px -52px; }
+.sprite-Cont_inf4 { background:url(../images/sprites.png) no-repeat -0px -80px; }
+
+/*Соц сети*/
+.sprite-social1{ background:url(../images/sprites.png) no-repeat -0px -107px; }
+.sprite-social2 { background:url(../images/sprites.png) no-repeat -0px -134px; }
+.sprite-social3 {  background:url(../images/sprites.png) no-repeat -0px -161px; }
+
+.sprite-arrowhead_down_40,
+.sprite-arrowhead_up_40
+{
+background-image:url(../images/sprites2.png) ;	
+background-repeat:no-repeat;
+}
+
+.sprite-arrowhead_down_40 { background-position: -0px -0px; }
+.sprite-arrowhead_up_40 { background-position: -0px -40px; }
+
 
 /*Переменна укказывающая на ширину основного блок*/
 @display_width: 1024px;
@@ -265,10 +288,7 @@ height: 100%;
 		height: 40px;
 		margin-bottom: 30px;
 		border-radius: 50%;
-		background-image: url(../images/arrowhead_up_40.png);
-		background-position: center;
-		background-repeat: no-repeat;
-		background-size: 25px;
+		
 		
 		background-color: @left-nav_button-bg-color;
 		box-shadow: darken(@left-nav_button-bg-color, 30%) 0px 0px 0px 3px  inset,
@@ -277,7 +297,7 @@ height: 100%;
 		-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(opacity=80)";
 		}
 		
-		a:last-child li{ background-image: url(../images/arrowhead_down_40.png);}
+	
 			 
 		li:hover{
 		.my_opacity(1);
@@ -703,13 +723,11 @@ font-family: MyriadProRegular;
 		  }
 		  
 		  .Contacs_social-net div{
-		  background:url(../images/social1.png) no-repeat center;
 		  .transition(0.1s);
 		  
 		  &:active{box-shadow: darken(@text-color, 90%) 1px 1px 1px 0px ; }
 		  }
-		  a:nth-child(2) div{background: url(../images/social2.png) no-repeat center;	}
-		  a:nth-child(3) div{background: url(../images/social3.png) no-repeat center;	}	
+		 
 		  
 	
 		     /*
@@ -748,11 +766,8 @@ font-family: MyriadProRegular;
 			left: 0%;
 			top: 50%;
 			margin-top: -14px;
-			background: url(../images/Cont_inf1.png) no-repeat center;
 			}
-			.Contacs_cont-inf li:nth-child(2) span{background: url(../images/Cont_inf2.png) no-repeat center;	}
-			.Contacs_cont-inf li:nth-child(3) span{background: url(../images/Cont_inf3.png) no-repeat center;	}
-			.Contacs_cont-inf li:nth-child(4) span{background: url(../images/Cont_inf4.png) no-repeat center;	}
+			
  }
  /*------------------------------------------------------------------------------------------*/
  

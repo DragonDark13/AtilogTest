@@ -8,9 +8,10 @@
 <meta http-equiv="X-UA-Compatible" content="IE=Edge">
 
 <title>Test version1(block scroling)</title>
-<!--Версия с прокруткой внутри блока-------------------->
+<!--Версия с прокруткой внутри блока-->
 
-<link  rel= "stylesheet" href="css/style_it_log.css" />
+<link  rel= "stylesheet"
+ href="css/style_it_log.css" />
 <script src="js/jquery-1.10.1.min.js"></script>
 <script src="js/app.js"></script>
 
@@ -27,11 +28,11 @@
 <body  >
 
 
-<!-- Верхнее меню----------------------------->
+<!-- Верхнее меню-->
 
 <nav  class="top">
     <div>
-    <!-- Кнопка переключатель------------------->
+     <!--Кнопка переключатель-->
         <div class="top_switch-meni"></div>
         <ul>
         
@@ -45,34 +46,41 @@
     </div>
 </nav>
 
-<!-- Боковое меню----------------------------->
+<!-- Боковое меню-->
 <nav class="left">
     <div>
         <ul>
         
-            <a href="#Portfolio"><li></li></a>
-            <a href="#Contact"><li></li></a>
+            <a href="#Portfolio">
+            <li 
+            class="sprite-arrowhead_up_40">
+            </li></a>
+            
+            <a href="#Contact">
+            <li 
+            class="sprite-arrowhead_down_40">
+            </li></a>
             
         </ul>
     </div>
 </nav>
 
 
-<!--Основной блок------------------------------>
+<!--Основной блок-->
 <section id="all">
 
 
-<!-- Блок с картинкой------------------------------------->
+<!-- Блок с картинкой-->
 <header>
     <img src="images/bg_fon.png"  alt=""/>
 </header>
 
 
-<!-- Блок портфолио-------------------------------->
+ <!--Блок портфолио-->
 <section id='Portfolio'  class="portfolio">
     <h4>Портфолио </h4>
     
-<!--Контейнер с картинками------------------------->
+<!--Контейнер с картинками-->
     <div class="conteiner-img">
     
         <img src="images/Galery/1384167725_red-site-10.jpg" 
@@ -103,10 +111,10 @@
     </div>
     
     
- <!--   Контейнер с текстовыми блоками------------------------->
+  <!--  Контейнер с текстовыми блоками-->
     <div class="conteiner-text-block">
     
-<!--    Блок с текстом-------------------->
+<!--    Блок с текстом-->
         <div>
             <h3>    "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet,
             consectetur, adipisci velit..."</h3>
@@ -122,7 +130,7 @@
         </div>
         
         
-<!--    Блоки с портфолио---------------------------------------------------->       
+<!--    Блоки с портфолио -->     
         <div class="portfolio-block">
             <h3>01</h3>
             <p>Cras at pretium nisl, a elementum sem.</p>
@@ -181,63 +189,105 @@
     </div>
 
 </section>
-<!-- Конец блока с портфолио------------------------------------->
+<!-- Конец блока с портфолио-->
 
 
-<!-- Контакты------------------------------------->
+ <!--Контакты-->
 <section id="Contact" class="Contacs">
     <h4>Контакты</h4>
     
     
-<!-- Форма ввода------------------------------------->
+<!-- Форма ввода-->
     <form>
         <legend>Написать нам</legend>
         
         
         <label>
             Ваше имя
-            <input type="text" required placeholder="Ваше имя">
-            <span class="form_hint">Это поле обязательно для заполнения </span>
+            <input type="text" 
+            required 
+            placeholder="Ваше имя">
+            <span class="form_hint">
+            Это поле обязательно для заполнения 
+            </span>
         </label>
         
         
         <label>
             Email
-            <input type="email" required placeholder=" Email">
-            <span class="form_hint">формат должен соответствовать email адресу</span>
+            <input 
+            type="email" 
+            required 
+            placeholder=" Email">
+            <span 
+            class="form_hint">
+            формат должен соответствовать 
+            email адресу
+            </span>
         </label>
         
         
         <label>
             Текст сообщения
-            <textarea placeholder="Введите ваше сообщение" cols="6"> </textarea>
+            <textarea 
+            placeholder="Введите ваше сообщение"
+             cols="6"> </textarea>
         </label>
         
         
-        <input type="submit" value="Отправить">
+        <input type="submit"
+        value="Отправить">
     </form>
     
 
-<!-- Мы в соцсетях -------------------------------------> 
+<!-- Мы в соцсетях-->
     <div class="Contacs_social-net">
         <legend>Мы в соцсетях</legend>
-        <a href="#"><div></div></a>
-        <a href="#"><div></div></a>
-        <a href="#"><div></div></a>
+        
+        <a href="#">
+        <div class="sprite-social1">
+        </div>
+        </a>
+        
+        <a href="#">
+        <div class="sprite-social2">
+        </div>
+        </a>
+        
+        <a href="#">
+        <div class="sprite-social2">
+        </div>
+        </a>
+        
     </div>
     
-<!-- Контактная информация ------------------------------------->  
+<!-- Контактная информация -->  
     <div class="Contacs_cont-inf">
         <legend>Контактная информация</legend>
         <ul>
-            <li><span></span>ATILOG</li>
-            <li><span></span>+ 38 (067) 901 45 45</li>
-            <li><span></span>г. Харьков, пл. Конституции 21, офис 10</li>
-            <li><span></span>web@atilog.ua</li>
+            <li>
+            <span class="sprite-Cont_inf1">
+            </span>ATILOG</li>
+            
+            <li>
+            <span 
+            class="sprite-Cont_inf2"
+             ></span>+ 38 (067) 901 45 45</li>
+             
+            <li>
+            <span 
+            class="sprite-Cont_inf3">
+            </span>г. Харьков, 
+            пл. Конституции 21, офис 10</li>
+            
+            <li>
+            <span class="sprite-Cont_inf4">
+            </span>web@atilog.ua</li>
+            
         </ul>
     </div>
 </section>
-<!-- Конец блока контактов------------------------------------->
+ <!--Конец блока контактов-->
 
 </section>
   </body>
