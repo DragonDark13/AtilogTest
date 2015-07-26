@@ -234,7 +234,6 @@ z-index: 200;
 		}
 		
 			a{ 
-			display:block; 
 			padding-left: 17px;
 			padding-right: 17px; }
 			
@@ -307,8 +306,6 @@ height: 100%;
 		lighten(@left-nav_button-bg-color, 15%) 0px 0px 0px 6px  inset;
 		.my_opacity(1);
 		-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(opacity=1)";	
-
-		/*box-shadow: darken(@left-nav_button-bg-color, 30%) 1px 1px 1px 0px  inset, darken(@left-nav_button-bg-color, 30%) 1px 1px 1px 0px  ;*/
 		}	
 		
 		li:active{
@@ -317,9 +314,17 @@ height: 100%;
 		 darken(@left-nav_button-bg-color, 30%) 0px 0px 0px 3px  inset,
 		darken(@left-nav_button-bg-color, 30%) 0px 0px 0px 6px  inset;
 		}	
+		
+			a{
+			width: 100%;
+			height: 100%;
+			}
 }
  /*------------------------------------------------------------------------------------------*/
  
+ /*Ссылки в верхнем и левом меню*/
+ .top a,
+ .left a { display:block;}
  
  /*
  * Хедер
@@ -561,7 +566,7 @@ font-family: MyriadProRegular;
 		*{ display:block;}
 	
 	}
-		legend{
+		p{
 		position:relative;	
 		margin-bottom: 20px;	
 		color: #cc6633;	
@@ -591,8 +596,8 @@ font-family: MyriadProRegular;
  * Выпадающий текст
  *
  */
-		  .form_hint{
-		  display:none;
+	.form_hint{
+	display:none;
 	}
 	
 	
@@ -676,7 +681,7 @@ font-family: MyriadProRegular;
 	padding-left: 29px;	
 	text-align:left;
 	
-		legend{	
+		p{	
 		color: @Base-color2;
 		margin-bottom: 12px;
 		}	
@@ -689,7 +694,7 @@ font-family: MyriadProRegular;
 	.Contacs_social-net{
 	padding-bottom: 26px;
 	
-		legend{	
+		p{	
 		padding-right: 282px - 118px;
 		
 			&:after{
@@ -735,7 +740,7 @@ font-family: MyriadProRegular;
  *
  */
 	
-	.Contacs_cont-inf  legend{	
+	.Contacs_cont-inf  p{	
 	  padding-right: 282px - 174px;
 		  
 		  &:after{
@@ -893,9 +898,9 @@ font-family: MyriadProRegular;
 			.Contacs_cont-inf ,
 			.Contacs_social-net{ 
 
-					legend{padding-right: 25%;}
+					p{padding-right: 25%;}
 
-							legend:after{
+							p:after{
 							width: 25%;
 							left: 75%;
 							}
@@ -903,7 +908,7 @@ font-family: MyriadProRegular;
 			
 			
 			/* Убирает  линию в блоке с ссылами на адреса и телефон фирмы */
-							.Contacs_cont-inf legend:after{width: 0%;}
+							.Contacs_cont-inf p:after{width: 0%;}
 			
 				.Contacs_cont-inf li {
 				padding-top: 3%;
@@ -996,7 +1001,7 @@ font-family: MyriadProRegular;
 	
 	h4:after{ width: 308px; }
 	
-	legend{
+	p{
 	padding-right: 426px - 122px;
 	
 		&:after{width: 426px - 122px;  }
@@ -1005,11 +1010,11 @@ font-family: MyriadProRegular;
 	textarea{ height:100px;}
 	
 	}
-	.Contacs .Contacs_social-net  legend:after{
+	.Contacs .Contacs_social-net  p:after{
 	width: 282px - 118px - 130px;
 	}
 	
-	.Contacs .Contacs_cont-inf  legend:after{
+	.Contacs .Contacs_cont-inf  p:after{
 	width: 271px - 174px;
 	}
 
@@ -1185,7 +1190,7 @@ font-family: MyriadProRegular;
 		form{
 		.clearfix ;}
 		
-			legend{
+			p{
 			padding-right: 280px - 122px;
 			
 				&:after{width: 280px - 122px;  }
@@ -1201,11 +1206,11 @@ font-family: MyriadProRegular;
 		.Contacs_cont-inf{	
 		margin-left: 0%;}
 		
-			.Contacs_social-net  legend:after{
+			.Contacs_social-net  p:after{
 			width: 280px - 118px ;
 			}
 			
-			.Contacs_cont-inf  legend:after{
+			.Contacs_cont-inf  p:after{
 			width: 280px - 174px;
 			}
 	}
